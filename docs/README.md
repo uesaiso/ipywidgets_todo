@@ -47,3 +47,53 @@ Understanding the data flow within the ToDo app can help you navigate the code a
       - **Validation**: Ensure attributes meet specific conditions, like non-empty to-do text.
 
 These libraries work together to create an interactive and dynamic interface within a Jupyter notebook, with `ipywidgets` building the interface, and `traitlets` managing data changes.
+
+## Testing
+
+Testing is an essential part of the development process, ensuring that the app behaves as expected and helping catch any issues early on. In this project, we use [pytest](https://pytest.org/), a popular testing framework in Python. Here's how you can run tests and write new ones:
+
+### Running Tests
+
+1. **Install pytest**: If you don't have pytest installed, you can install it using pip:
+```bash
+pip install pytest
+```
+
+2. **Run the Test Suite**: Navigate to the project directory and run the tests using the following command:
+```bash
+pytest
+```
+
+3. **Review the Results**: Check the output for any failed tests, and review the details to understand what went wrong.
+### Writing New Tests
+
+If you're contributing to the project, you may need to write new tests for added features or changes:
+
+1. **Understand the Requirements**: Know what the code is supposed to do, so you can verify that it behaves correctly.
+
+2. **Write Test Cases**: Create test cases that cover different scenarios, including edge cases and potential pitfalls.
+
+3. **Run and Validate**: After writing the tests, run them to make sure they pass, and that they fail when you introduce deliberate mistakes (this ensures that the tests are working as intended).
+
+
+#### Writing New Tests with pytest
+
+Writing tests with pytest is straightforward. Here's a brief lesson:
+
+1. **Create a Test File**: Test files should be named `test_*.py` or `*_test.py`.
+
+2. **Write Test Functions**: Inside the test file, write functions that start with `test_` to define test cases. You'll use the `assert` statement to check that a condition is true. Here's an example:
+```python
+def test_addition():
+      assert 2 + 2 == 4
+```
+
+3. **Run the Tests**: You can run the tests as described above, and pytest will automatically discover and execute all the test functions.
+4. **Understanding `assert`**: The `assert` statement checks whether the expression following it is true. If the expression is false, the test will fail, and pytest will report an error. In the example above, the test will pass because the expression `2 + 2 == 4` is true. If you were to write `assert 2 + 2 == 5`, the test would fail, and pytest would provide information about why it failed.
+5. **Use Fixtures and Markers**: pytest provides advanced features like fixtures for setup and teardown, and markers to categorize tests. Explore the [pytest documentation](https://docs.pytest.org/en/latest/) for more.
+
+### Why Testing Matters
+
+- **Quality Assurance**: Testing ensures that the code meets the required standards and behaves as intended.
+- **Regression Prevention**: It helps prevent future changes from unintentionally breaking existing functionality.
+- **Collaboration Support**: Tests provide a safety net for collaborators, allowing them to make changes with confidence that existing features still work.
