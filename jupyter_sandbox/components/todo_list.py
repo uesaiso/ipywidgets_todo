@@ -17,7 +17,7 @@ class TodoList(VBox):
         self.store.observe(self.update_todos, names="todos")
         self.update_todos()
 
-    def add_todo(self) -> None:
+    def add_todo(self, change: dict) -> None:
         """Adds a new Todo item using the text from the text widget."""
         self.store.add_todo(self.new_todo_input.value)
         self.new_todo_input.value = ""
