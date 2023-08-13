@@ -1,1 +1,1 @@
-::: jupyter_sandbox.store
+::: ipywidgets_todo.store

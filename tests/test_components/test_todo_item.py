@@ -1,7 +1,7 @@
 import pytest
 import pytest_mock
-from jupyter_sandbox.components.todo_item import TodoItem
-from jupyter_sandbox.store.todo_store import TodoStore
+from ipywidgets_todo.components.todo_item import TodoItem
+from ipywidgets_todo.store.todo_store import TodoStore
 
 
 @pytest.fixture

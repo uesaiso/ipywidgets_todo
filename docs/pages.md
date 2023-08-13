@@ -1,1 +1,1 @@
-::: jupyter_sandbox.pages
+::: ipywidgets_todo.pages

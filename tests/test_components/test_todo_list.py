@@ -1,6 +1,6 @@
 import pytest
-from jupyter_sandbox.components.todo_list import TodoList
-from jupyter_sandbox.store.todo_store import TodoStore
+from ipywidgets_todo.components.todo_list import TodoList
+from ipywidgets_todo.store.todo_store import TodoStore
 
 
 @pytest.fixture

@@ -1,5 +1,5 @@
 """
-jupyter_sandbox is an interative todo list app built with Jupyter widgets.
+ is an interative todo list app built with Jupyter widgets.
 """
 __version__ = "0.1.0"
 

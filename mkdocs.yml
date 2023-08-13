@@ -1,4 +1,4 @@
-site_name: Jupyter Sandbox Documentation
+site_name: ipywidgets_todo Documentation
 
 theme:
   name: "material"
@@ -8,11 +8,9 @@ plugins:
 
 use_directory_urls: false
 
-
 nav:
-  - 'index.md'
+  - README.md
   - Code Reference:
     - 'pages.md'
     - 'components.md'
     - 'store.md'
-

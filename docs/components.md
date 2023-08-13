@@ -1,1 +1,1 @@
-::: jupyter_sandbox.components
+::: ipywidgets_todo.components
