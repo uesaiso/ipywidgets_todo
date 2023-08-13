@@ -51,3 +51,17 @@ def test_remove_todo(todo_store: TodoStore) -> None:
     todo_store.add_todo(text="Test todo")
     todo_store.remove_todo(index=0)
     assert len(todo_store.todos) == 0
+
+
+def test_toggle_todo_index_error(todo_store: TodoStore) -> None:
+    todo_store.add_todo(text="Test todo")
+    with pytest.raises(IndexError) as e:
+        todo_store.toggle_todo(index=1)
+    assert str(e.value) == "Index out of range"
+
+
+def test_remove_todo_index_error(todo_store: TodoStore) -> None:
+    todo_store.add_todo(text="Test todo")
+    with pytest.raises(IndexError) as e:
+        todo_store.remove_todo(index=1)
+    assert str(e.value) == "Index out of range"

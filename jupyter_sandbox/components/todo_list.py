@@ -5,6 +5,8 @@ from .todo_item import TodoItem
 
 
 class TodoList(VBox):
+    """A widget that displays a list of Todo items."""
+
     def __init__(self, store: TodoStore = todo_store, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.store = store
@@ -17,9 +19,11 @@ class TodoList(VBox):
 
     def add_todo(self, text_widget: Text) -> None:
         self.store.add_todo(text_widget.value)
+        """Adds a new Todo item using the text from the text widget."""
         self.new_todo_input.value = ""
 
     def update_todos(self, change: dict = None) -> None:
+        """Updates the Todo list based on the current state of the store."""
         self.children = [self.new_todo_input] + [
             TodoItem(todo, index=idx) for idx, todo in enumerate(self.store.todos)
         ]

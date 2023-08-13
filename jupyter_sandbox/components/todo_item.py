@@ -4,6 +4,8 @@ from ..store import Todo, TodoStore, todo_store
 
 
 class TodoItem(HBox):
+    """A widget that displays a single Todo item."""
+
     def __init__(
         self, todo: Todo, index: int, store: TodoStore = todo_store, *args, **kwargs
     ) -> None:
@@ -19,7 +21,9 @@ class TodoItem(HBox):
         self.children = [self.checkbox, self.delete_button]
 
     def toggle_todo(self, change: dict) -> None:
+        """Toggles the completion status of the Todo item."""
         self.store.toggle_todo(self.index)
 
     def delete_todo(self, button: Button) -> None:
+        """Deletes the Todo item."""
         self.store.remove_todo(self.index)
