@@ -21,7 +21,7 @@ def test_add_todo(
 ) -> None:
     old_todo_count = len(todo_store.todos)
     todo_list.new_todo_input.value = todo_input_params[0]
-    todo_list.add_todo(todo_list.new_todo_input)
+    todo_list.add_todo()
     new_todo_count = len(todo_store.todos)
     assert new_todo_count == old_todo_count + 1
     assert todo_store.todos[new_todo_count - 1].text == todo_input_params[0]
@@ -35,7 +35,7 @@ def test_add_empty_todo(todo_list: TodoList, todo_store: TodoStore) -> None:
     old_todo_count = len(todo_store.todos)
     todo_list.new_todo_input.value = ""
     with pytest.raises(ValueError) as e:
-        todo_list.add_todo(todo_list.new_todo_input)
+        todo_list.add_todo()
     new_todo_count = len(todo_store.todos)
     assert str(e.value) == "Todo text must be a non-empty string"
     assert new_todo_count == old_todo_count
